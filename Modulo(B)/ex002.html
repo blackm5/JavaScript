@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../js.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <title>Alert</title>
+    <style>
+        body {
+            background: white radial-gradient(rgb(255, 0, 149), rgb(160, 0, 112), rgb(47, 47, 255)) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        main {
+            /*position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);*/
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            outline: 5px solid rgb(255, 255, 255);
+            padding: 2px 10px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.836);
+        }
+        div:hover {
+            border: 5px solid rgb(0, 255, 191);
+        }
+        h1,p {
+            text-align: center;
+            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;
+        }
+        p {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+                <h1>Hello, world!</h1>
+                <p>Getting started with JavaScript.</p>
+                <p id="text"></p>
+        </div>
+    </main>
+    <script>
+        var objective = window.prompt("What's your objective?")
+        window.alert(`Your objective: ${objective}`)
+    </script>
+</body>
+</html>
