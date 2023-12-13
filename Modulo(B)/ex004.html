@@ -41,24 +41,31 @@
         p {
             font-size: 2em;
         }
+        span {
+            color: yellow;
+            text-shadow: 0px 0px 5px yellow;
+        }
     </style>
 </head>
 <body>
-    <main>
-        <div>
-                <h1>Hello, world!</h1>
-                <p>Getting started with JavaScript.</p>
-                <p id="text"></p>
-        </div>
-    </main>
+    
     <script>
-        //Number.parseInt()------- Números Naturais
-        //Number.paseFloat()------ Números Reais 
-        //String()---------------- Para coverter para String
-        //.toString()------------- Para converter para String (no final)
-        var number1 = Number(window.prompt('Enter a number!'))
-        var number2 = Number(window.prompt('Enter another number!'))
-        window.alert(`The addition, multiplication, division and subtraction between the numbers is, respectively: ${number1 + number2}, ${number1 * number2}, ${number1 / number2} or ${number2 / number1} and ${number1 - number2}`)
+        // .length -- quantidade de caracteris
+        // .toUpperCase() -- Tudo para Maiusculas
+        // .toLowerCase() -- Tudo para Minúsculas
+        var name = window.prompt('What your name?')
+        document.write(`
+        <main>
+        <div>
+                <h1>Welcome <span>${name}</span>!</h1>
+                <p>
+                    Your name has <span>${name.length}</span> letters.<br>
+                    In capital letters: "<span>${name.toUpperCase()}</span><br>
+                    In lower letters: "<span><sup>${name.toLowerCase()}</sup>"<br>
+                </p>
+        </div>
+        </main>
+        `)
     </script>
 </body>
 </html>
