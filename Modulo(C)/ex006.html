@@ -47,21 +47,22 @@
 </head>
 <body>
     <main>
-        <div id='area' onclick="clic()" onmouseenter="move()" onmouseout="out()">
+        <div id='area'>
             🎄
         </div>
     </main>
     <script>
+        let a = window.document.querySelector('div#area')
+        a.addEventListener('click', clic)
+        a.addEventListener('mouseenter', move)
+        a.addEventListener('mouseout', out)
         function clic() {
-            var a = window.document.querySelector('div#area')
             a.innerHTML = '`🎁´'
         }
         function move() {
-            var a = window.document.querySelector('div#area')
             a.innerHTML = '🎅'
         }
         function out() {
-            var a = window.document.querySelector('div#area')
             a.innerHTML = "🎄"  
             a.style.transition = '0.5s'
         }
