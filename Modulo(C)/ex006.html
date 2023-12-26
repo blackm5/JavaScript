@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../js.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <title>Events DOM</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            background: white radial-gradient(rgb(255, 0, 149), rgb(160, 0, 112), rgb(47, 47, 255)) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        main {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            color: yellow;
+            border: 5px dashed rgb(255, 255, 255);
+            border-radius: 100%;
+            font: normal bolder 150px 'Yanone Kaffeesatz', sans-serif;
+            height: 300px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div:hover {
+            border: 10px dashed rgb(255, 0, 0);
+            outline: 10px dashed rgb(0, 128, 0);
+            text-shadow: 0px 0px 5px black;
+            box-shadow: 0px 0px 100px rgb(255, 251, 0);
+            background-image: radial-gradient(rgb(0, 0, 0), rgb(255, 251, 0), rgb(255, 0, 0, 0.300), rgba(0, 189, 0, 0.300));
+            transition-duration: 0.1s;
+        } 
+    </style>
+</head>
+<body>
+    <main>
+        <div id='area' onclick="clic()" onmouseenter="move()" onmouseout="out()">
+            🎄
+        </div>
+    </main>
+    <script>
+        function clic() {
+            var a = window.document.querySelector('div#area')
+            a.innerHTML = '`🎁´'
+        }
+        function move() {
+            var a = window.document.querySelector('div#area')
+            a.innerHTML = '🎅'
+        }
+        function out() {
+            var a = window.document.querySelector('div#area')
+            a.innerHTML = "🎄"  
+            a.style.transition = '0.5s'
+        }
+    </script>
+</body>
+</html>
