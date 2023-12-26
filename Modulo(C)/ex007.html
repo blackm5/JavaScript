@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../js.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <title>Adding Number</title>
+    <style>
+        body {
+            background: white radial-gradient(rgb(255, 0, 149), rgb(160, 0, 112), rgb(47, 47, 255)) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        main {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section {
+            outline: 5px solid rgb(255, 255, 255);
+            padding: 2px 10px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.836);
+        }
+        h1{
+            text-align: center;
+            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;
+        }
+        label {
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif
+        }
+        input {
+            text-align: center;
+            background-color: rgba(0, 255, 255, 0.158);
+            color: rgb(255, 255, 255);
+            padding: 5px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            font: normal bolder 13px Arial, Helvetica, sans-serif;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.500);
+        }
+        input:hover {
+            background-color: rgba(0, 255, 255, 0.411);
+        }
+        input#plus {
+            display: block;
+            margin: auto;
+            width: 300px;
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid green;
+            color: rgb(0, 114, 0);
+            background-image: radial-gradient(rgba(0, 255, 0, 0.788), green);
+            font: normal bolder 30px 'Yanone Kaffeesatz', sans-serif;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.500);
+        }
+        input#plus:hover{
+            background-image: radial-gradient(rgba(255, 0, 0, 0.788), rgb(128, 0, 0));
+            color: rgb(114, 0, 0);
+            box-shadow: 0px 0px 20px rgba(226, 0, 0, 0.7);
+            border-color: red;
+            transition-duration: 0.3s;
+        }
+        div {
+            display: block;
+            margin: auto;
+            height: 200px;
+            width: 200px;
+            background-image: radial-gradient(rgba(0, 255, 0, 0.788), rgb(0, 71, 0));
+            border-radius: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.700);
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        p {
+            color: rgb(255, 255, 255);
+            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+                <h1>Adding Values</h1>
+                <label for="in1">N1°:</label>
+                    <input type="number" name="n1" id="in1" maxlength="6" required>
+                <label for="in2">N2°:</label>
+                    <input type="number" name="n2" id="in2" maxlength="6" required><br>
+                <input type="button" value="PLUS" id="plus">
+                <div><p id="x">x</p></div>
+        </section>
+        </main>
+    <script>
+        var calc = window.document.querySelector('input#plus')
+        calc.addEventListener('click', plus)
+        function plus() {
+            var tn1 = Number(window.document.querySelector('input#in1').value)
+            var tn2 = Number(window.document.querySelector('input#in2').value)
+            var res = window.document.querySelector('p#x')
+            res.innerHTML = `${tn1 + tn2}`
+        }
+    </script>
+</body>
+</html>
