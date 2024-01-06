@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en-usa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
-    <title>TRAFFIC TICKET</title>
+    <title>Nationality</title>
     <style>
         body {
             background: white radial-gradient(rgb(255, 0, 149), rgb(160, 0, 112), rgb(47, 47, 255)) no-repeat center center fixed;
@@ -77,11 +77,11 @@
 <body>
     <main>
         <div>
-                <h1>Sisten of Traffic Ticket</h1>
-                <label for="ispeed">Your speed in mph:
-                <input type="number" name="speed" id="ispeed"></label>
+                <h1>Nationality</h1>
+                <label for="ispeed">Your Country of birth:
+                <input type="text" name="n" id="in"></label>
                 <input type="button" value="VERIFY" id="verify">
-                <div id="mul">Drive Safely!</div>
+                <div id="mul">Your Nationality</div>
         </div>
     </main>
     <script>
@@ -89,14 +89,12 @@
         var res = window.document.querySelector('div#mul')
         but.addEventListener('click', clic)
         function clic() {
-            var t = Number(window.document.querySelector('input#ispeed').value)
-            if (t > 120) {
-                res.innerHTML = `The speed of your car is ${t}mph.<br>You overtook the speed of 120km/h. <br><strong>Fined!</strong>`
-                res.style.color = 'red'
+            var t = String(window.document.querySelector('input#in').value)
+            if (t == 'USA') {
+                res.innerHTML = `You were born in ${t.toUpperCase()}. Your Nationality is american.<br> 🗽`
             }
             else {
-                res.innerHTML = `The speed of your car is ${t}mph.<br>Stay Responsible!`
-                res.style.color = 'yellow'
+                res.innerHTML = `You were born in ${t}. You're foreigner. <br> 🌎`
             }
         }
     </script>
