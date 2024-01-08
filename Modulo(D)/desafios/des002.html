@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-usa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../js.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <title>Age</title>
+    <style>
+        body {
+            background: rgb(133, 0, 0) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        main {
+            /*position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);*/
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            outline: 5px solid rgb(255, 255, 255);
+            padding: 2px 10px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.836);
+        }
+        a,p,h1,input#veri {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            color: white;
+        }
+        h1 {
+            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        label {
+            margin-top: 10px;
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif;
+            display: inline;
+        }
+        input{
+            margin-top: 5px;
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif;
+            background-color:rgb(235, 235, 235);
+            color: rgb(0, 0, 0);
+            border-radius: 20px;
+            text-align: center;
+        }
+        input#veri {
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 7px;
+            cursor: pointer;
+            background-image: radial-gradient( rgb(0, 0, 92), rgb(41, 41, 255));
+        }
+        input#veri:hover {
+            background-image: radial-gradient(rgb(41, 41, 255), rgb(0, 0, 92));
+            box-shadow: 0px 0px 10px black;
+            padding: 8px;
+        }
+        div#img {
+            margin: auto;
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+        }
+        div#yt {
+            border-radius: 2px;
+            margin: 15px;
+            padding: 5px;
+        }
+        a,div#yt{
+            margin-top: 20px;
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif;
+            text-decoration: none;
+        }
+        a:hover {
+            font-size: 23px;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body id="b">
+    <main>
+        <div>
+            <h1 >Age</h1>
+            <label for="inun">Year of Birth:
+                <input type="number" name="nun" id="inun" maxlength="4" minlength="4">
+            </label>
+            <fieldset>
+                <legend>Your sex</legend>
+                <P>
+                    <label for="ifem">Feminine</label>
+                    <input type="radio" name="sex" id="ifem">
+                    <input type="radio" name="sex" id="imas"><label for="imas">Masculine</label>
+                </p>
+            </fieldset>
+            <input type="button" value="VERIFY" id="veri">
+            <div id="img"></div>
+            <div id="yt"></div>
+            <a href="https://www.cursoemvideo.com/">@Cursoemvideo</a>
+        </div>
+    </main>
+    <script>
+        var vrf = window.document.querySelector('input#veri')
+        vrf.addEventListener('click', clic)
+        function clic() {
+            var year = Number(window.document.querySelector('input#inun').value)
+            var fen = window.document.querySelector('input#ifem')
+            var man = window.document.querySelector('input#imas')
+            var im = window.document.querySelector('div#img')
+            var ty = window.document.querySelector('div#yt')
+            var bodcolor = window.document.querySelector('body#b')
+            var date = new Date()
+            var houers = date.getFullYear()
+            var age = houers - year
+            if (fen){
+                ty.innerHTML = `xx${age}`
+            }
+            if (man) {
+                ty.innerHTML = `xy${age}`
+            }
+        }
+
+        //else {
+           // ty.innerHTML = `You're ${age} years old.`
+            //bodcolor.style.background = 'radial-gradient(rgb(56, 56, 56), rgb(32, 32, 32), rgb(0, 0, 0))'
+           // im.style.background = 'url(img/) center bottom no-repeat'
+       // }
+    </script>
+</body>
+</html>
