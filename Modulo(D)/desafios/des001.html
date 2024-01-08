@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-usa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../js.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <title>Nationality</title>
+    <style>
+        body {
+            background: white no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        main {
+            /*position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);*/
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            outline: 5px solid rgb(255, 255, 255);
+            padding: 2px 10px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.836);
+        }
+        a,p,h1 {
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        h1 {
+            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;
+        }
+        p{
+            margin-bottom: 10px;
+            font: normal bolder 50px 'Yanone Kaffeesatz', sans-serif;
+        }
+        div#img {
+            margin: auto;
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+        }
+        a{
+            margin-top: 20px;
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif;
+            text-decoration: none;
+        }
+        a:hover {
+            font-size: 23px;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body id="b">
+    <main>
+        <div>
+            <h1 >Time</h1>
+            <p id="hou"></p>
+            <div id="img"></div>
+            <a href="https://www.cursoemvideo.com/">@Cursoemvideo</a>
+        </div>
+    </main>
+    <script>
+        var paragraph = window.document.querySelector('p#hou')
+        var bodcolor = window.document.querySelector('body#b')
+        var im = window.document.querySelector('div#img')
+        var date = new Date()
+        var houers  = date.getHours()
+        if (houers > 4 && houers < 12){
+            paragraph.innerHTML = `Is ${houers}am. Good morning!`
+            bodcolor.style.background = 'radial-gradient(rgb(0, 238, 255), rgb(0, 153, 255), rgb(102, 67, 255))'
+            im.style.background = 'url(img/morning.jpg) center center no-repeat'
+        }
+        else if (houers >= 12 && houers < 19){
+            paragraph.innerHTML = `Is ${houers-12}pm. Good afternoon!`
+            bodcolor.style.background = 'radial-gradient(rgb(238, 255, 0), rgb(255, 145, 0), rgb(255, 67, 67))'
+            im.style.background = 'url(img/afternoon.jpg) center center no-repeat'
+        }
+        else {
+            paragraph.innerHTML = `Is ${houers-12}pm. Good night!`
+            bodcolor.style.background = 'radial-gradient(rgb(56, 56, 56), rgb(32, 32, 32), rgb(0, 0, 0))'
+            im.style.background = 'url(img/night.jpg) center bottom no-repeat'
+        }
+    </script>
+</body>
+</html>
