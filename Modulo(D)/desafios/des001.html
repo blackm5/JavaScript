@@ -86,6 +86,11 @@
             bodcolor.style.background = 'radial-gradient(rgb(238, 255, 0), rgb(255, 145, 0), rgb(255, 67, 67))'
             im.style.background = 'url(img/afternoon.jpg) center center no-repeat'
         }
+        else if (houers <= 4){
+            paragraph.innerHTML = `Is ${houers}am. Good night!`
+            bodcolor.style.background = 'radial-gradient(rgb(56, 56, 56), rgb(32, 32, 32), rgb(0, 0, 0))'
+            im.style.background = 'url(img/night.jpg) center bottom no-repeat'
+        }
         else {
             paragraph.innerHTML = `Is ${houers-12}pm. Good night!`
             bodcolor.style.background = 'radial-gradient(rgb(56, 56, 56), rgb(32, 32, 32), rgb(0, 0, 0))'
