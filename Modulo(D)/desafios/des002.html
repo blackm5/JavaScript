@@ -10,7 +10,7 @@
     <title>Age</title>
     <style>
         body {
-            background: rgb(133, 0, 0) no-repeat center center fixed;
+            background: radial-gradient(rgb(255, 0, 149), rgb(160, 0, 112), rgb(47, 47, 255)) no-repeat center center fixed;
             background-size: cover;
             color: white;
         }
@@ -72,15 +72,20 @@
             padding: 8px;
         }
         div#img {
-            margin: auto;
-            width: 250px;
-            height: 250px;
+            display: none;
             border-radius: 100%;
+            margin: auto;            
+            width: 200px;
+            height: 200px;
+            background: contan;
+            
         }
         div#yt {
-            border-radius: 2px;
             margin: 15px;
             padding: 5px;
+            border-radius: 2px;
+            text-align: center;
+            display: none;
         }
         a,div#yt{
             margin-top: 20px;
@@ -112,7 +117,7 @@
             <input type="button" value="VERIFY" id="veri">
             <div id="img"></div>
             <div id="yt"></div>
-            <a href="https://www.cursoemvideo.com/">@Cursoemvideo</a>
+            <a href="https://www.cursoemvideo.com/"  target="_blank" rel="external">@Cursoemvideo</a>
         </div>
     </main>
     <script>
@@ -122,25 +127,67 @@
             var year = Number(window.document.querySelector('input#inun').value)
             var fen = window.document.querySelector('input#ifem')
             var man = window.document.querySelector('input#imas')
-            var im = window.document.querySelector('div#img')
-            var ty = window.document.querySelector('div#yt')
             var bodcolor = window.document.querySelector('body#b')
             var date = new Date()
             var houers = date.getFullYear()
             var age = houers - year
-            if (fen){
-                ty.innerHTML = `xx${age}`
+            var im = window.document.querySelector('div#img')
+            im.style.display = 'block'
+            var ty = window.document.querySelector('div#yt')
+            ty.style.display = 'block'
+            ty.style.background = 'white'
+            if (year == 0 || year > houers){
+                window.alert("--[ERROR]--")
             }
-            if (man) {
-                ty.innerHTML = `xy${age}`
+            else {
+                if (fen.checked){ 
+                    ty.style.color = 'rgb(248, 0, 83)'
+                    if (age < 12) {
+                        ty.innerHTML = `You're a child with aged in ${age} years`
+                        bodcolor.style.background = 'radial-gradient(rgb(255, 78, 160), rgb(255, 37, 121), rgb(248, 0, 83))'
+                        im.style.background = 'url(img/woman-child.png) center center no-repeat'
+                    }
+                    else if (age < 25){
+                        ty.innerHTML = `You're a girl with aged in ${age} years`
+                        bodcolor.style.background = 'radial-gradient(rgb(255, 54, 148), rgb(255, 21, 111), rgb(248, 0, 54))'
+                        im.style.background = 'url(img/woman-yong.png) center center no-repeat'
+                    }
+                    else if (age < 65){
+                        ty.innerHTML = `You're a womam with aged in ${age} years`
+                        bodcolor.style.background = 'radial-gradient(rgb(255, 37, 139), rgb(255, 21, 72), rgb(248, 0, 54))'
+                        im.style.background = 'url(img/woman-adult.png) center center no-repeat'
+                    }
+                    else {
+                        ty.innerHTML = `You're a lady with aged in ${age} years`
+                        bodcolor.style.background = 'radial-gradient(rgb(255, 81, 162), rgb(255, 90, 126), rgb(248, 0, 54))'
+                        im.style.background = 'url(img/woman-old.png) center center no-repeat'
+                    }
+                }
+                else {
+                    ty.style.color = 'rgb(0, 126, 245)'
+                    if (age < 12) {
+                        ty.innerHTML = `You're a child with aged in ${age} years`
+                        bodcolor.style.background = 'radial-gradient(rgb(61, 184, 255), rgb(33, 185, 255), rgb(0, 126, 245))'
+                        im.style.background = 'url(img/man-child.png) center center no-repeat'
+                    }
+                    else if (age < 25){
+                        ty.innerHTML = `You're a boy with aged in ${age} years`
+                        bodcolor.style.background = 'radial-gradient(rgb(14, 126, 255), rgb(0, 174, 255), rgb(0, 97, 189))'
+                        im.style.background = 'url(img/man-yong.png) center center no-repeat'
+                    }
+                    else if (age < 65){
+                        ty.innerHTML = `You're a man with aged in ${age} years`
+                        bodcolor.style.background = 'radial-gradient(rgb(20, 129, 255), rgb(0, 89, 255), rgb(34, 0, 158))'
+                        im.style.background = 'url(img/man-adult.png) center center no-repeat'
+                    }
+                    else {
+                        ty.innerHTML = `You're a sir with aged in ${age} years`
+                        bodcolor.style.background = 'radial-gradient(rgb(62, 152, 255), rgb(83, 143, 255), rgb(34, 0, 158))'
+                        im.style.background = 'url(img/man-old.png) center center no-repeat'
+                    }
+                }
             }
         }
-
-        //else {
-           // ty.innerHTML = `You're ${age} years old.`
-            //bodcolor.style.background = 'radial-gradient(rgb(56, 56, 56), rgb(32, 32, 32), rgb(0, 0, 0))'
-           // im.style.background = 'url(img/) center bottom no-repeat'
-       // }
     </script>
 </body>
 </html>
