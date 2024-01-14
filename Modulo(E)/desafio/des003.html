@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-usa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../js.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <title>Counter</title>
+    <style>
+        * {
+            margin: 0px;
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif;
+        }
+        body {
+            background: white radial-gradient(rgb(255, 0, 149), rgb(160, 0, 112), rgb(47, 47, 255)) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        main {
+            /*position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);*/
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            outline: 5px solid rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.836);
+        }
+        a,h1 {
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        h1 {
+            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        fieldset {
+            border-radius: 10px;
+        }
+        input {
+            border-radius: 10px;
+            text-align: center;
+            display: block;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        label,input#ina, input#inb, input#inc{
+            text-align: center;
+            margin: auto;
+        }
+        input#star {
+            margin: auto;
+            width: 100px;
+            padding: 3px;
+            color: white;
+            background-color: rgb(51, 51, 255);
+        }
+        input#star:hover {
+            width: 105px;
+            height: 30px;
+            font-size: 25px;
+            box-shadow: 0px 0px 10px black;
+            cursor: pointer;
+            background-color: rgb(0, 0, 167);
+        }
+        div#re {
+            border-radius: 10px;
+            margin-top: 10px;
+            padding: 5px;
+            text-align: center;
+            display: none;
+        }
+        a{
+            margin-top: 20px;
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif;
+            text-decoration: none;
+        }
+        a:hover {
+            font-size: 23px;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <h1 >Counter</h1>
+            <fieldset>
+                <legend>Information</legend>
+            <label for="ina">Start:</label>
+            <input type="number" name="na" id="ina"><br>
+            <label for="inb">End:</label>
+            <input type="number" name="nb" id="inb"><br>
+            <label for="inc">Spacing:</label>
+            <input type="number" name="nc" id="inc"><br>
+            <input type="button" value="Start" id="star">
+            </fieldset>
+            <div id="re"></div>
+            <a href="https://www.cursoemvideo.com/">@Cursoemvideo</a>
+        </div>
+    </main>
+    <script>
+        var start = window.document.querySelector('input#star')
+        start.addEventListener('click', clic)
+        function clic() {
+            var na = Number(window.document.querySelector('input#ina').value) 
+            var nb = Number(window.document.querySelector('input#inb').value) 
+            var nc = Number(window.document.querySelector('input#inc').value) 
+            var res = window.document.querySelector('div#re')
+            res.style.display = 'block'
+            if(nc <= 0){
+                res.innerHTML = `Fill in the information...`
+            }
+            else if (na>nb) {
+                for(na; na>=nb; na-=nc) {
+                    res.innerHTML += `👉${na} `
+                }
+                res.innerHTML += `🏁`
+            }
+            else{
+                for(na; na<=nb; na+=nc) {
+                    res.innerHTML += `👉${na} `
+                }
+                res.innerHTML += `🏁`
+            }
+        }
+    </script>
+</body>
+</html>
