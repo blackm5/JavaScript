@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
-    <title>Counter</title>
+    <title>Multiplication Table</title>
     <style>
         * {
             margin: 0px;
@@ -41,12 +41,18 @@
             color: white;
         }
         h1 {
-            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;
+            text-align: center;
+            font: normal bolder 4em 'Yanone Kaffeesatz', sans-serif;
             margin-bottom: 20px;
             margin-top: 10px;
         }
         fieldset {
             border-radius: 10px;
+            max-width: 70vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
         }
         input {
             border-radius: 10px;
@@ -54,9 +60,9 @@
             display: block;
             align-items: center;
             justify-content: center;
-            
+            width: 70px;
         }
-        label,input#ina, input#inb, input#inc{
+        label,input#ina{
             text-align: center;
             margin: auto;
         }
@@ -66,6 +72,7 @@
             padding: 3px;
             color: white;
             background-color: rgb(51, 51, 255);
+            box-shadow: 0px 0px 5px black;
         }
         input#star:hover {
             width: 105px;
@@ -75,13 +82,10 @@
             cursor: pointer;
             background-color: rgb(0, 0, 167);
         }
-        div#re {
-            max-width: 70vw;
-            border-radius: 10px;
-            margin-top: 10px;
-            padding: 5px;
+        fieldset#re {display: none;}
+        fieldset#re, select {
+            border-radius: 5px;
             text-align: center;
-            display: none;
         }
         a{
             margin-top: 20px;
@@ -98,18 +102,28 @@
 <body>
     <main>
         <div>
-            <h1 >Counter</h1>
+            <h1 >Multiplication Table</h1>
             <fieldset>
-                <legend>Information</legend>
-            <label for="ina">Start:</label>
+                <legend><label for="ina">Number</label></legend>
             <input type="number" name="na" id="ina"><br>
-            <label for="inb">End:</label>
-            <input type="number" name="nb" id="inb"><br>
-            <label for="inc">Spacing:</label>
-            <input type="number" name="nc" id="inc"><br>
             <input type="button" value="Start" id="star">
-            </fieldset>
-            <div id="re"></div>
+                <fieldset id="re">
+                    <legend>Table</legend>
+                    <select >
+                        <option id="yt0"></option>
+                        <option id="yt1"></option>
+                        <option id="yt2"></option>
+                        <option id="yt3"></option>
+                        <option id="yt4"></option>
+                        <option id="yt5"></option>
+                        <option id="yt6"></option>
+                        <option id="yt7"></option>
+                        <option id="yt8"></option>
+                        <option id="yt9"></option>
+                        <option id="yt10"></option>
+                    </select>
+                </fieldset>
+            </fieldset>    
             <a href="https://www.cursoemvideo.com/">@Cursoemvideo</a>
         </div>
     </main>
@@ -117,26 +131,31 @@
         var start = window.document.querySelector('input#star')
         start.addEventListener('click', clic)
         function clic() {
-            var na = Number(window.document.querySelector('input#ina').value) 
-            var nb = Number(window.document.querySelector('input#inb').value) 
-            var nc = Number(window.document.querySelector('input#inc').value) 
-            var res = window.document.querySelector('div#re')
-            res.style.display = 'block'
-            if(nc <= 0){
-                res.innerHTML = `Fill in the information...`
-            }
-            else if (na>nb) {
-                for(na; na>=nb; na-=nc) {
-                    res.innerHTML += `👉${na} `
-                }
-                res.innerHTML += `🏁`
-            }
-            else{
-                for(na; na<=nb; na+=nc) {
-                    res.innerHTML += `👉${na} `
-                }
-                res.innerHTML += `🏁`
-            }
+            var na = Number(window.document.querySelector('input#ina').value)
+            var r = window.document.querySelector('fieldset#re')
+            r.style.display = 'block'
+            var y0 = window.document.querySelector('option#yt0')
+            var y1 = window.document.querySelector('option#yt1')
+            var y2 = window.document.querySelector('option#yt2')
+            var y3 = window.document.querySelector('option#yt3')
+            var y4 = window.document.querySelector('option#yt4')
+            var y5 = window.document.querySelector('option#yt5')
+            var y6 = window.document.querySelector('option#yt6')
+            var y7 = window.document.querySelector('option#yt7')
+            var y8 = window.document.querySelector('option#yt8')
+            var y9 = window.document.querySelector('option#yt9')
+            var y10 = window.document.querySelector('option#yt10')
+            y0.innerHTML = `0 x ${na} = ${0*na}`
+            y1.innerHTML = `1 x ${na} = ${1*na}`
+            y2.innerHTML = `2 x ${na} = ${2*na}`
+            y3.innerHTML = `3 x ${na} = ${3*na}`
+            y4.innerHTML = `4 x ${na} = ${4*na}`
+            y5.innerHTML = `5 x ${na} = ${5*na}`
+            y6.innerHTML = `6 x ${na} = ${6*na}`
+            y7.innerHTML = `7 x ${na} = ${7*na}`
+            y8.innerHTML = `8 x ${na} = ${8*na}`
+            y9.innerHTML = `9 x ${na} = ${9*na}`
+            y10.innerHTML = `10 x ${na} = ${10*na}`
         }
     </script>
 </body>
