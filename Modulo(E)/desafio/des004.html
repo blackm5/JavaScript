@@ -107,23 +107,12 @@
                 <legend><label for="ina">Number</label></legend>
             <input type="number" name="na" id="ina"><br>
             <input type="button" value="Start" id="star">
-                <fieldset id="re">
-                    <legend>Table</legend>
-                    <select >
-                        <option id="yt0"></option>
-                        <option id="yt1"></option>
-                        <option id="yt2"></option>
-                        <option id="yt3"></option>
-                        <option id="yt4"></option>
-                        <option id="yt5"></option>
-                        <option id="yt6"></option>
-                        <option id="yt7"></option>
-                        <option id="yt8"></option>
-                        <option id="yt9"></option>
-                        <option id="yt10"></option>
-                    </select>
-                </fieldset>
-            </fieldset>    
+            <fieldset id="re">
+                <legend>Table</legend>
+                <select id="sel">
+                </select>
+            </fieldset>
+            </fieldset>
             <a href="https://www.cursoemvideo.com/">@Cursoemvideo</a>
         </div>
     </main>
@@ -133,29 +122,14 @@
         function clic() {
             var na = Number(window.document.querySelector('input#ina').value)
             var r = window.document.querySelector('fieldset#re')
+            var s = window.document.querySelector('select#sel')
             r.style.display = 'block'
-            var y0 = window.document.querySelector('option#yt0')
-            var y1 = window.document.querySelector('option#yt1')
-            var y2 = window.document.querySelector('option#yt2')
-            var y3 = window.document.querySelector('option#yt3')
-            var y4 = window.document.querySelector('option#yt4')
-            var y5 = window.document.querySelector('option#yt5')
-            var y6 = window.document.querySelector('option#yt6')
-            var y7 = window.document.querySelector('option#yt7')
-            var y8 = window.document.querySelector('option#yt8')
-            var y9 = window.document.querySelector('option#yt9')
-            var y10 = window.document.querySelector('option#yt10')
-            y0.innerHTML = `0 x ${na} = ${0*na}`
-            y1.innerHTML = `1 x ${na} = ${1*na}`
-            y2.innerHTML = `2 x ${na} = ${2*na}`
-            y3.innerHTML = `3 x ${na} = ${3*na}`
-            y4.innerHTML = `4 x ${na} = ${4*na}`
-            y5.innerHTML = `5 x ${na} = ${5*na}`
-            y6.innerHTML = `6 x ${na} = ${6*na}`
-            y7.innerHTML = `7 x ${na} = ${7*na}`
-            y8.innerHTML = `8 x ${na} = ${8*na}`
-            y9.innerHTML = `9 x ${na} = ${9*na}`
-            y10.innerHTML = `10 x ${na} = ${10*na}`
+            s.innerHTML = ''
+            for (var c=0; c<=10; c++){
+                var opt = document.createElement('option')//
+                opt.innerHTML += `${c} x ${na} = ${c*na}`
+                sel.appendChild(opt)//
+            }
         }
     </script>
 </body>

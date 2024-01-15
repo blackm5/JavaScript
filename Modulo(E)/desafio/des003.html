@@ -122,6 +122,7 @@
             var nc = Number(window.document.querySelector('input#inc').value) 
             var res = window.document.querySelector('div#re')
             res.style.display = 'block'
+            res.innerHTML = ''//
             if(nc <= 0){
                 res.innerHTML = `Fill in the information...`
             }
