@@ -33,7 +33,7 @@ function clic() {
         window.alert('Fill in appropriately (Invalid value or already found)')
     }
     na.value = ''
-    na.focus()//
+    na.focus()////////////////////////////
         var result = window.document.querySelector('input#result')
         result.addEventListener('click', res)
         function res() {
