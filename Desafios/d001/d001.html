@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-usa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../js.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <title>Counter</title>
+    <style>
+        * {
+            margin: 0px;
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif;
+        }
+        body {
+            background: white radial-gradient(rgb(5, 143, 0), rgb(0, 153, 89), rgb(0, 190, 165)) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        main {
+            /*position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);*/
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            outline: 5px solid rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.836);
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        h1 {
+            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        input {
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100px;
+            padding: 3px;
+            color: white;
+            background-color: rgb(75, 238, 0);
+            margin-left: 20px;
+        }
+        input:hover {
+            width: 105px;
+            height: 30px;
+            font-size: 25px;
+            box-shadow: 0px 0px 10px black;
+            cursor: pointer;
+            background-color: rgb(19, 167, 0);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Challenge OnE</h1>
+            <input type="button" value="Button 1" id="bt01">
+            <input type="button" value="Button 2" id="bt02">
+            <input type="button" value="Button 3" id="bt03">
+        </div>
+    </main>
+    <script>
+        var bt01 = window.document.querySelector('input#bt01')
+        var bt02 = window.document.querySelector('input#bt02')
+        var bt03 = window.document.querySelector('input#bt03')
+        bt01.addEventListener('click', clic)
+        bt02.addEventListener('click', cli)
+        bt03.addEventListener('click', cl)
+        function clic() {
+                return window.alert('You clicked the button 01')
+        }
+        function cli() {
+            return window.alert('You clicked the button 02')
+        }
+        function cl() {
+            return window.alert('You clicked the button 03')
+        }
+    </script>
+</body>
+</html>
