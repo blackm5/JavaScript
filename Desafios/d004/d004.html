@@ -68,7 +68,7 @@
 <body>
     <main>
         <div>
-            <h1>Challenge TwO</h1>
+            <h1>Challenge FoUr</h1>
             <input type="button" value="Start Challenge" id="bt01">
         </div>
     </main>
@@ -76,9 +76,11 @@
         var bt01 = window.document.querySelector('input#bt01')
         bt01.addEventListener('click', clic)
         function clic() {
-                var name = window.prompt('what is your name?')
-                var age = Number(window.prompt('what is your age?'))
-                window.alert(`Nice to meet you ${name}! We're the same age ${age} years old.`)
+                let product = window.prompt('Which product are you purchasing?')
+                let price = Number(window.prompt(`How much does the ${product} you are buying cost?`))
+                let money = Number(window.prompt(`What is the price given to buy the ${product}?`))
+                let change = money - price 
+                window.alert(`You are buying a ${product} that costs ${price.toFixed(2)} $. It gave you ${money.toFixed(2)} $ in cash and you will receive ${change.toFixed(2)} $ in change. Check back often!`)
         }
     </script>
 </body>
