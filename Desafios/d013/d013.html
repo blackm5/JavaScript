@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-usa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../js.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <title>Challenge</title>
+    <style>
+        * {
+            margin: 0px;
+            font: normal bolder 20px 'Yanone Kaffeesatz', sans-serif;
+        }
+        body {
+            background: white radial-gradient(rgb(5, 143, 0), rgb(0, 153, 89), rgb(0, 190, 165)) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        main {
+            /*position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);*/
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            outline: 5px solid rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.836);
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        h1 {
+            font: normal bolder 5em 'Yanone Kaffeesatz', sans-serif;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        input {
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 120px;
+            padding: 3px;
+            color: white;
+            background-color: rgb(75, 238, 0);
+            margin-left: 20px;
+        }
+        input:hover {
+            width: 130px;
+            height: 30px;
+            font-size: 25px;
+            box-shadow: 0px 0px 10px black;
+            cursor: pointer;
+            background-color: rgb(19, 167, 0);
+        }
+        span.m1  {
+            color: rgb(0, 255, 0);
+            text-shadow: 0px 0px 20px rgba(0, 128, 11, 0.836);
+        }
+        span.m2  {
+            color: rgb(255, 24, 24);
+            text-shadow: 0px 0px 20px rgba(107, 0, 0, 0.836);
+        }
+        span.m3  {
+            color: rgb(255, 87, 25); 
+            text-shadow: 0px 0px 20px rgba(167, 94, 0, 0.836);
+        }
+        table {
+            margin: auto;
+            width: 200px;
+            border-collapse: collapse;
+            text-align: center;
+            vertical-align: middle;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Challenge TwElVe</h1>
+            <input type="button" value="Start Challenge" id="bt01">
+            <p id="p001"></p>
+        </div>
+    </main>
+    <script>
+        var bt01 = window.document.querySelector('input#bt01')
+        var p01 = window.document.querySelector('p#p001')
+        bt01.addEventListener('click', clic)
+        function clic() {
+                let student = window.prompt(`Student's name:`)
+                let first_note = Number(window.prompt(`${student}'s first note:`))
+                let second_note = Number(window.prompt(`${student}'s second note:`))
+                let average = (first_note + second_note) / 2
+                let g = document.createElement('p')
+                if (first_note >= 10 || second_note >= 10 || first_note < 0 || second_note < 0) {
+                    window.alert(`--[ERROR]-- Fill in correctly. Average between 0 and 10`)
+                }
+                else if (average > 8) {
+                    g.innerHTML = `
+                    <br><h2>Analyzing ${student}'s Situation...</h2><br>
+                    With grades ${first_note} and ${second_note}, the <strong>average is ${average}</strong>.<br>
+                    According to the table, with an average above or equal to 8, ${student}'s <span class='m1'>APPROVED</span>.<br>
+                    <table>
+                        <thead>
+                        <th>Average</th>
+                        <th>Situation</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Over 8</td>
+                                <td><span class='m1'>APPROVED</span></td>
+                            </tr>
+                            <tr>
+                                <td>Between 7 and 5</td>
+                                <td><span class='m3'>RECOVERY</span></td>
+                            </tr>
+                            <tr>
+                                <td>Below 5</td>
+                                <td><span class='m2'>FAILING</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    `
+                }
+                else if (average < 5) {
+                    g.innerHTML = `
+                    <br><h2>Analyzing ${student}'s Situation...</h2><br>
+                    With grades ${first_note} and ${second_note}, the <strong>average is ${average}</strong>.<br>
+                    According to the table, with an average below 5, ${student}'s <span class='m2'>FAILING</span>.<br>
+                    <table>
+                        <thead>
+                        <th>Average</th>
+                        <th>Situation</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Over 8</td>
+                                <td><span class='m1'>APPROVED</span></td>
+                            </tr>
+                            <tr>
+                                <td>Between 7 and 5</td>
+                                <td><span class='m3'>RECOVERY</span></td>
+                            </tr>
+                            <tr>
+                                <td>Below 5</td>
+                                <td><span class='m2'>FAILING</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    `
+                }
+                else {
+                    g.innerHTML = `
+                    <br><h2>Analyzing ${student}'s Situation...</h2><br>
+                    With grades ${first_note} and ${second_note}, the <strong>average is ${average}</strong>.<br>
+                    According to the table, average between 7 and 5, ${student}'s of <span class='m3'>RECOVERY</span>.<br>
+                    <table>
+                        <thead>
+                        <th>Average</th>
+                        <th>Situation</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Over 8</td>
+                                <td><span class='m1'>APPROVED</span></td>
+                            </tr>
+                            <tr>
+                                <td>Between 7 and 5</td>
+                                <td><span class='m3'>RECOVERY</span></td>
+                            </tr>
+                            <tr>
+                                <td>Below 5</td>
+                                <td><span class='m2'>FAILING</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    `
+                }
+                p01.appendChild(g)
+        }
+    </script>
+</body>
+</html>
