@@ -63,14 +63,16 @@
             cursor: pointer;
             background-color: rgb(19, 167, 0);
         }
+        mark#c1{ background-color: rgb(30, 255, 0);}
+        mark#c2{ background-color: red;}
     </style>
 </head>
 <body>
     <main>
         <div>
-            <h1>Challenge TeN</h1>
+            <h1>Challenge ElEvEn</h1>
             <input type="button" value="Start Challenge" id="bt01">
-            <p id="p001">Consider a quadratic equation (ax²+bx+c=0). Press the button and find Δ</p>
+            <p id="p001"></p>
         </div>
     </main>
     <script>
@@ -78,17 +80,28 @@
         var p01 = window.document.querySelector('p#p001')
         bt01.addEventListener('click', clic)
         function clic() {
-                let a = Number(window.prompt(`What is the value of a?`))
-                let b = Number(window.prompt(`What is the value of b?`))
-                let c = Number(window.prompt(`What is the value of c?`))
-                let result = b**2 - 4 * a * c
+                let year = window.prompt('Which year will be checked?')
                 let g = document.createElement('p')
-                g.innerHTML = `
-                <br><h2>Solving Quadratic Equation</h2><br>
-                Equation: <strong>${a}x² + ${b}x + ${c} = 0<br></strong>
-                Equation of <strong>Δ = ${b}² - 4.${a}.${c}</strong><br>
-                The calculated value is <mark><strong> Δ = ${result} </strong></mark>
-                `
+                if (year%4!=0) {
+                    g.innerHTML = `
+                    <br><h2>The year ${year} <mark id='c2'>not a leap year</mark> 🚫</h2>
+                    `
+                }
+                else if (year%400==0){
+                    g.innerHTML = `
+                    <br><h2>'The year ${year} <mark id='c1'>is a leap year</mark> ✅</h2>
+                    `
+                }
+                else if (year%100==0) {
+                    g.innerHTML = `
+                    <br><h2>The year ${year} <mark id='c2'>not a leap year</mark> 🚫</h2>
+                    `
+                }
+                else {
+                    g.innerHTML = `
+                    <br><h2>'The year ${year} <mark id='c1'>is a leap year</mark> ✅</h2>
+                    `
+                }
                 p01.appendChild(g)
         }
     </script>
