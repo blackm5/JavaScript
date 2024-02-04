@@ -53,7 +53,7 @@
             padding: 3px;
             color: white;
             background-color: rgb(75, 238, 0);
-            margin-left: 150px;
+            margin-left: 20px;
         }
         input:hover {
             width: 130px;
@@ -63,19 +63,12 @@
             cursor: pointer;
             background-color: rgb(19, 167, 0);
         }
-        mark { 
-            border-radius: 5px;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-        mark#c1{ background-color: rgb(30, 255, 0);}
-        mark#c2{ background-color: red;}
     </style>
 </head>
 <body>
     <main>
         <div>
-            <h1>Challenge ElEvEn</h1>
+            <h1>Challenge TwElVe</h1>
             <input type="button" value="Start Challenge" id="bt01">
             <p id="p001"></p>
         </div>
@@ -85,26 +78,29 @@
         var p01 = window.document.querySelector('p#p001')
         bt01.addEventListener('click', clic)
         function clic() {
-                let year = window.prompt('Which year will be checked?')
+                let old = Number(window.prompt(`Old price product:`))
+                let current = Number(window.prompt(`Current product price:`))
+                let difference_up = current - old
+                let difference_down = old - current
+                let percentage_up = (difference_up*100) / old
+                let percentage_down = (difference_down*100) / current
                 let g = document.createElement('p')
-                if (year%4!=0) {
+                if (old < current) {
                     g.innerHTML = `
-                    <br><h2>The year <mark id='c2'>${year} not a leap year</mark> 🚫</h2>
-                    `
-                }
-                else if (year%400==0){
-                    g.innerHTML = `
-                    <br><h2>The year <mark id='c1'>${year} is a leap year</mark> ✅</h2>
-                    `
-                }
-                else if (year%100==0) {
-                    g.innerHTML = `
-                    <br><h2>The year <mark id='c2'>${year} not a leap year</mark> 🚫</h2>
+                    <h2>Analyzing Reported Values...</h2><br>
+                    The product used to cost $${old} now it costs $${current}.<br>
+                    The product became more expensive.<br>
+                    The price has increased $${difference_up} from the previous price.<br>
+                    One increased from ${percentage_up}% upwards.
                     `
                 }
                 else {
                     g.innerHTML = `
-                    <br><h2>The year <mark id='c1'>${year} is a leap year</mark> ✅</h2>
+                    <br><h2>Analyzing Reported Values...</h2><br>
+                    The product used to cost $${old} now it costs $${current}.<br>
+                    The product became cheaper.<br>
+                    The price has decreased $${difference_down} from the previous price.<br>
+                    A ${percentage_down}% reduction down.<br>
                     `
                 }
                 p01.appendChild(g)
