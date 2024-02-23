@@ -1,0 +1,41 @@
+<html>
+    <body>
+        <script>
+            //Objeto como Parâmetro da Função--
+            function person(){
+            this.name = "Mike";
+            this.old = 27;
+                this.printName = function(number){
+                    window.alert(number);
+                }
+                this.returnAnimal = function(animal){
+                    return animal;
+                }
+            };
+
+            function animal(){
+                this.race = "Dog";
+            };
+            var person = new person();
+            var animal = new animal();
+            animal.race = "Dobermann"
+            window,alert(person.returnAnimal(animal).race);
+
+        /*    function animal(race,width){
+                if(race == undefined){//parâmetros de race ñ exitirem
+                    race = 'animal';
+                }
+                if(width == undefined){//parâmetros de width ñ exitirem
+                    width = 'Ñ';
+                }
+            this.race = race;
+            this.width = width;
+            }
+            animal1 = new animal("Cat");//parâmetros definidos
+            animal2 = new animal("Dog");//parâmetros definidos
+
+            window.alert(animal1.race);
+            window.alert(animal2.width);*/
+        </script>
+    </body>
+</html>
