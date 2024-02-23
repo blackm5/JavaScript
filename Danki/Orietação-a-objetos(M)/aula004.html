@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <script>
+            class Animal{
+                //INSTÂNCIA: Criar class o objeto.
+                constructor(name){ //permite passar parâmetros
+                    this.name = name;
+                };
+                printName(){ //É Function, mas é considerado um método.
+                    return this.name;
+                }
+            }
+            class Dog extends Animal{//[extends]-- Inclui uma class na outra (herda propriedades da class "pai".)
+                constructor(name){
+                    super(name);//[super]-- Invoca o [constructor] da class pai. (parâmetro dentro)
+                    this.race = "Cani Corso"
+                }
+                printRace(){ //É Function, mas é considerado um método.
+                    return this.race
+                }
+            }
+            var dog = new Dog("Jack");
+            window.alert(dog.printName());
+            window.alert(dog.printRace());
+        </script>
+    </body>
+</html>
