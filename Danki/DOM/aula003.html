@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <script>
+            /*var elements = window.document.getElementsByClassName('box');
+            var el = elements[0];
+            el.style.width = '100px';
+            el.style.height = '100px';
+            el.style.backgroundColor = 'blue';
+            el.style.marginLeft = '200px';
+            el.style.borderRadius = '5px 20px';*/
+            
+            var elements = document.getElementsByClassName("box");
+            for(var i = 0; i < elements.length; i++){
+                var el = elements[i];
+                el.style.width = '100px';
+                el.style.height = '100px';
+                el.style.backgroundColor = 'blue';
+                el.style.margin = 'auto';
+                el.style.marginBottom = '5px';
+                el.style.borderRadius = '5px 20px';
+            }
+        </script>
+    </body>
+</html>
