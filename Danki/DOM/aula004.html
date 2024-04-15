@@ -1,0 +1,14 @@
+<html>
+<body>
+    <div class="testes">
+        <div class="inside-testes">Text</div>
+    </div>
+    <div class="testes">
+        <div class="inside-testes">Text02</div>
+    </div>
+    <script>
+        var els  = window.document.querySelectorAll('.testes');
+        els[0].innerHTML = '<div class="inside-testes-via-js">Hey!</div>';
+    </script>
+</body>
+</html>
