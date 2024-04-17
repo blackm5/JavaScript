@@ -1,0 +1,23 @@
+<html>
+<body>
+    <style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-left: 0px;
+    }
+    .animetion{
+        transition: 1s;
+        margin-left: 300px;
+    }
+    </style>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelectorAll('.box')[0];
+        setTimeout(()=>{
+            box.classList.add('animetion');
+        },1000);
+    </script>
+</body>
+</html>
