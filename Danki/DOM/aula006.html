@@ -1,0 +1,56 @@
+<html>
+<body>
+    <style>
+        button{
+            cursor: pointer;
+            color: green;
+        }
+        p{
+            overflow: hidden;
+            height: 0px;
+            transition: 1s;
+        }
+        .open{
+            height: 200px !important;
+        }
+    </style>
+    <div class="content">
+        <h1>Title 1</h1>
+            <button type="submit">More</button>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum aspernatur optio inventore esse quod, nihil, ex rerum aliquid eligendi sunt minima ab dolor alias ad. Natus doloremque fugiat dolores veritatis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, natus? Iusto architecto deserunt hic recusandae quae corrupti et, alias, nobis accusantium, consequuntur assumenda numquam maiores reiciendis a quo quibusdam asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus amet, neque quam fuga laborum ratione delectus velit voluptas rem architecto, sequi totam? Nobis consequuntur expedita quisquam laboriosam saepe accusantium enim?</p>
+    </div>
+    <div class="content">
+        <h1>Title 2</h1>
+            <button type="submit">More</button>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum aspernatur optio inventore esse quod, nihil, ex rerum aliquid eligendi sunt minima ab dolor alias ad. Natus doloremque fugiat dolores veritatis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, natus? Iusto architecto deserunt hic recusandae quae corrupti et, alias, nobis accusantium, consequuntur assumenda numquam maiores reiciendis a quo quibusdam asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus amet, neque quam fuga laborum ratione delectus velit voluptas rem architecto, sequi totam? Nobis consequuntur expedita quisquam laboriosam saepe accusantium enim?</p>
+    </div>
+    <script>
+        var button = document.querySelector(".content button");
+        button.addEventListener('click', function(){
+            var content = document.querySelector('.content p');
+            if(content.classList.contains('open')){
+                content.classList.remove('open');
+                button.innerHTML = '&dArr;'
+            }else{
+                content.classList.add('open');
+                button.innerHTML = '&uArr;'
+            }
+        });
+        /*var buttons = document.querySelectorAll(".content button");
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var content = this.parentElement.nextElementSibling;
+                if(content.classList.contains('.open')){
+                    this.innerHTML = '&dArr;';
+                    content.classList.remove('.open');
+                    alert('uy');
+                }else{
+                    this.innerHTML = '&uArr;';
+                    content.classList.add('.open');
+                    alert('u');
+                }
+            });
+        });*/
+    </script>
+</body>
+</html>
